@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+        - name: mariadb
+          image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}"
+          imagePullPolicy: {{ .Values.database.image.pullPolicy }}
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "{{ .Values.database.rootPassword }}"
+            - name: MYSQL_DATABASE
+              value: "{{ .Values.database.database }}"
+          ports:
+            - containerPort: {{ .Values.database.service.port }}
