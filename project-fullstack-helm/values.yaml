@@ -10,8 +10,6 @@ frontend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-frontend
     tag: 6ff4854b816f6876c9cbbe34077df35ff064c018
-    tag: d8b7a3fcc2b4a011193d2c426869e4b5991b80c2
-    tag: latest
     pullPolicy: IfNotPresent
   service:
     type: LoadBalancer 
@@ -21,8 +19,6 @@ backend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-backend
     tag: 6ff4854b816f6876c9cbbe34077df35ff064c018
-    tag: d8b7a3fcc2b4a011193d2c426869e4b5991b80c2
-    tag: latest
     pullPolicy: IfNotPresent
   service:
     port: 8080
@@ -31,8 +27,6 @@ database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
     tag: 6ff4854b816f6876c9cbbe34077df35ff064c018
-    tag: d8b7a3fcc2b4a011193d2c426869e4b5991b80c2
-    tag: latest
     pullPolicy: IfNotPresent
   service:
     port: 3306
