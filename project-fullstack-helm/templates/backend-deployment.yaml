@@ -22,7 +22,6 @@ spec:
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.backend.service.port }}
-          command: ["java", "-jar", "/app.jar"]
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://mariadb:3306/fullstack"
