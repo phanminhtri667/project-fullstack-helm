@@ -9,6 +9,7 @@ replicaCount: 1
 frontend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-frontend
+    tag: d8b7a3fcc2b4a011193d2c426869e4b5991b80c2
     tag: latest
     pullPolicy: IfNotPresent
   service:
@@ -18,6 +19,7 @@ frontend:
 backend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-backend
+    tag: d8b7a3fcc2b4a011193d2c426869e4b5991b80c2
     tag: latest
     pullPolicy: IfNotPresent
   service:
@@ -26,6 +28,7 @@ backend:
 database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
+    tag: d8b7a3fcc2b4a011193d2c426869e4b5991b80c2
     tag: latest
     pullPolicy: IfNotPresent
   service:
