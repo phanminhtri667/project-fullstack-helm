@@ -2,8 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mariadb
+  labels:
+    app: mariadb
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: mariadb
@@ -12,14 +14,16 @@ spec:
       labels:
         app: mariadb
     spec:
+      imagePullSecrets:
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}
       containers:
         - name: mariadb
           image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}"
           imagePullPolicy: {{ .Values.database.image.pullPolicy }}
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: "{{ .Values.database.rootPassword }}"
+              value: {{ .Values.database.rootPassword }}
             - name: MYSQL_DATABASE
-              value: "{{ .Values.database.database }}"
+              value: {{ .Values.database.database }}
           ports:
             - containerPort: {{ .Values.database.service.port }}
