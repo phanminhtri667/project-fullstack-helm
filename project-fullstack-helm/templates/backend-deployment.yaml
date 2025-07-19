@@ -28,4 +28,4 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               value: "root"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "$Arjun12"
+              value: "root"
