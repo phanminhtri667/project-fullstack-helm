@@ -26,6 +26,7 @@ database:
     tag: 139eb2a88da3778a708f3a78b257b40168b62433
     pullPolicy: IfNotPresent
   service:
+    name: mariadb
     port: 3306
   rootPassword: root
   database: fullstack
