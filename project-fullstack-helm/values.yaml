@@ -21,7 +21,7 @@ backend:
     pullPolicy: IfNotPresent
   service:
     type: LoadBalancer
-    port: 8080
+    port: 8083
 database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
