@@ -6,6 +6,6 @@ spec:
   selector:
     app: backend
   ports:
-    - port: 80
-      targetPort: {{ .Values.backend.service.port }}
-  type: ClusterIP
+    - port: {{ .Values.backend.service.port }}   # External port (8083)
+      targetPort: 8080                           # Internal container port
+  type: {{ .Values.backend.service.type }}
