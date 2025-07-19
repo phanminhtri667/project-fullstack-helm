@@ -13,7 +13,7 @@ frontend:
   service:
     type: LoadBalancer
     port: 3000
-    apiUrl: http://backend
+    apiUrl: http://34.173.253.87:8083
 backend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-backend
