@@ -25,3 +25,4 @@ spec:
           env:
             - name: REACT_APP_API_URL
               value: "{{ .Values.frontend.service.apiUrl }}"
+

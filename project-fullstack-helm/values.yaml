@@ -20,6 +20,7 @@ backend:
     tag: b8779e5b6b8db83d43cdb5ca22b45ad94571dc2a
     pullPolicy: IfNotPresent
   service:
+    type: LoadBalancer
     port: 8080
 database:
   image:
