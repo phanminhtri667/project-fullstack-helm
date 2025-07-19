@@ -8,7 +8,7 @@ replicaCount: 1
 frontend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-frontend
-    tag: f78fe8ea293d7381e79fd209965bd40c5b8b0478
+    tag: b8779e5b6b8db83d43cdb5ca22b45ad94571dc2a
     pullPolicy: IfNotPresent
   service:
     type: LoadBalancer
@@ -17,14 +17,14 @@ frontend:
 backend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-backend
-    tag: f78fe8ea293d7381e79fd209965bd40c5b8b0478
+    tag: b8779e5b6b8db83d43cdb5ca22b45ad94571dc2a
     pullPolicy: IfNotPresent
   service:
     port: 8080
 database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
-    tag: f78fe8ea293d7381e79fd209965bd40c5b8b0478
+    tag: b8779e5b6b8db83d43cdb5ca22b45ad94571dc2a
     pullPolicy: IfNotPresent
   service:
     name: mariadb
