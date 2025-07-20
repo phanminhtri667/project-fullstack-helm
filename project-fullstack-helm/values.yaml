@@ -51,12 +51,12 @@ ingress:
   hosts:
     - host: devops.tri.com
       paths:
-        - path: /api(/|$)(.*)
+        - path: /(.*)
           pathType: Prefix
           backend:
             serviceName: frontend
             servicePort: 3000
-        - path: /api/?(.*)
+        - path: /api(/|$)(.*)
           pathType: Prefix
           backend:
             serviceName: backend
