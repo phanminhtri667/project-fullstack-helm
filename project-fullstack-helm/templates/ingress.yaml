@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "project-fullstack-helm.fullname" . }}
+  name: {{ include "project-fullstack-helm.fullname" . }}-ingress
   labels:
     {{- include "project-fullstack-helm.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
@@ -12,16 +12,6 @@ metadata:
 spec:
   {{- with .Values.ingress.className }}
   ingressClassName: {{ . }}
-  {{- end }}
-  {{- if .Values.ingress.tls }}
-  tls:
-    {{- range .Values.ingress.tls }}
-    - hosts:
-        {{- range .hosts }}
-        - {{ . | quote }}
-        {{- end }}
-      secretName: {{ .secretName }}
-    {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
@@ -35,9 +25,9 @@ spec:
             {{- end }}
             backend:
               service:
-                name: {{ include "project-fullstack-helm.fullname" $ }}
+                name: {{ .backend.serviceName }}
                 port:
-                  number: {{ $.Values.service.port }}
+                  number: {{ .backend.servicePort }}
           {{- end }}
     {{- end }}
 {{- end }}
