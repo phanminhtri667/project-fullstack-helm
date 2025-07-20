@@ -15,7 +15,7 @@ backend:
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
-    port: 8083
+    port: 8081
 database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
@@ -60,7 +60,7 @@ ingress:
           pathType: Prefix
           backend:
             serviceName: backend
-            servicePort: 8083
+            servicePort: 8081
   tls: []
 resources: {}
 livenessProbe:
