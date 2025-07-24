@@ -2,7 +2,7 @@ replicaCount: 1
 frontend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-frontend
-    tag: d9974b877a1388a5dd9d4cf6e36062832c43391d
+    tag: cf5bb0f400e11001e00a205381e0d629c2515375
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -11,7 +11,7 @@ frontend:
 backend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-backend
-    tag: d9974b877a1388a5dd9d4cf6e36062832c43391d
+    tag: cf5bb0f400e11001e00a205381e0d629c2515375
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -19,14 +19,13 @@ backend:
 database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
-    tag: d9974b877a1388a5dd9d4cf6e36062832c43391d
+    tag: cf5bb0f400e11001e00a205381e0d629c2515375
     pullPolicy: IfNotPresent
   service:
     name: mariadb
     port: 3306
   rootPassword: root
   database: fullstack
-
 # ✅ Thêm Redis
 redis:
   image:
@@ -35,7 +34,6 @@ redis:
     pullPolicy: IfNotPresent
   service:
     port: 6379
-
 # ✅ Thêm Kafka
 kafka:
   image:
@@ -51,8 +49,6 @@ kafka:
       pullPolicy: IfNotPresent
     service:
       port: 2181
-
-      
 imagePullSecrets:
   - name: github-registry-secret
 nameOverride: ""
