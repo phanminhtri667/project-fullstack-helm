@@ -26,6 +26,33 @@ database:
     port: 3306
   rootPassword: root
   database: fullstack
+
+# ✅ Thêm Redis
+redis:
+  image:
+    repository: redis
+    tag: "7.2"
+    pullPolicy: IfNotPresent
+  service:
+    port: 6379
+
+# ✅ Thêm Kafka
+kafka:
+  image:
+    repository: bitnami/kafka
+    tag: "3.6"
+    pullPolicy: IfNotPresent
+  service:
+    port: 9092
+  zookeeper:
+    image:
+      repository: bitnami/zookeeper
+      tag: "3.9"
+      pullPolicy: IfNotPresent
+    service:
+      port: 2181
+
+      
 imagePullSecrets:
   - name: github-registry-secret
 nameOverride: ""
