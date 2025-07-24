@@ -2,7 +2,7 @@ replicaCount: 1
 frontend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-frontend
-    tag: a73893a503aa433b89e08a11f4fd3d182882657c
+    tag: 06c68009c9e1581ac4c1691282bd76ff56a96545
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -11,7 +11,7 @@ frontend:
 backend:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-backend
-    tag: a73893a503aa433b89e08a11f4fd3d182882657c
+    tag: 06c68009c9e1581ac4c1691282bd76ff56a96545
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -19,7 +19,7 @@ backend:
 database:
   image:
     repository: ghcr.io/phanminhtri667/fullstack-database
-    tag: a73893a503aa433b89e08a11f4fd3d182882657c
+    tag: 06c68009c9e1581ac4c1691282bd76ff56a96545
     pullPolicy: IfNotPresent
   service:
     name: mariadb
