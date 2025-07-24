@@ -27,3 +27,10 @@ spec:
               value: {{ .Values.database.database }}
           ports:
             - containerPort: {{ .Values.database.service.port }}
+          volumeMounts:
+            - name: mariadb-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mariadb-storage
+          persistentVolumeClaim:
+            claimName: mariadb-pvc
