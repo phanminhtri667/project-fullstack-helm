@@ -24,3 +24,5 @@ spec:
               value: PLAINTEXT://kafka:9092
             - name: KAFKA_LISTENERS
               value: PLAINTEXT://0.0.0.0:9092
+            - name: ALLOW_PLAINTEXT_LISTENER
+              value: "yes"
