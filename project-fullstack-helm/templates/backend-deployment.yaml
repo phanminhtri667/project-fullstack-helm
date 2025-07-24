@@ -4,6 +4,7 @@ metadata:
   name: backend
   labels:
     app: backend
+    app.kubernetes.io/name: backend
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -13,6 +14,7 @@ spec:
     metadata:
       labels:
         app: backend
+        app.kubernetes.io/name: backend 
     spec:
       imagePullSecrets:
         {{- toYaml .Values.imagePullSecrets | nindent 8 }}
