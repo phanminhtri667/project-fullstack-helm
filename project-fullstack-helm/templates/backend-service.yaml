@@ -4,6 +4,7 @@ metadata:
   name: backend
   labels:
     app.kubernetes.io/name: backend
+    prometheus: monitor
 spec:
   selector:
     app: backend
