@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: backend-rules
+  namespace: tri-fullstack
+  labels:
+    release: prometheus   # để Prometheus nạp theo selector hiện tại
+spec:
+  groups:
+    - name: backend-availability
+      rules:
+        - alert: BackendDown
+          expr: up{job="backend"} == 0
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Backend không được scrape (job=backend)"
+        - alert: High5xxRate
+          expr: |
+            sum(rate(http_server_requests_seconds_count{status=~"5..",namespace="tri-fullstack"}[5m]))
+            /
+            sum(rate(http_server_requests_seconds_count{namespace="tri-fullstack"}[5m])) > 0.05
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Tỉ lệ 5xx > 5% trong 10 phút"
